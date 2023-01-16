@@ -1,0 +1,79 @@
+<p style="font-size: 10px;"> - NAMESPACE</p>
+<h4 id="details-name"></h4>
+<p>
+One of the properties of the state object is namespace.
+</p>
+<p>
+    A namespace is a container that holds a set of identifiers (i.e. variable, function, class). Namespaces are used to organize code and avoid naming conflicts. Namespaces are commonly used to group related functions, classes, and variables together.
+In this case, the namespace property of the state object is used to store the name of the namespace to which the function belongs. It's not used in the code you provided to me, it would be used if you have multiple functions with the same name but in different namespaces.
+</p>
+<p>It is not a necessary property but it could be useful to have for some use cases.</p>
+
+
+<hr>
+
+<p style="font-size: 10px;"> - FUNCTION</p>
+<h4 id="details-function"></h4>
+<p>Variable is an object that contains properties that store information about a specific function. One of these properties is function.</p>
+    <p>The function property of the state object is used to store the name of the function being processed. This property is updated by the lexer.states[j].callback(matches, line) function, which is called when a match is found for the corresponding regular expression defined in the lexer.addStateRule(ignore, regex, callback) function.
+    </p>
+    <p>When the lexer.lex(lines) function is called, it processes the input and calls the appropriate callback function for each match found. The callback function is responsible for updating the properties of the state object with the information extracted from the input. In this case, the callback function updates the function property with the name of the function.</p>
+    <p>The function property is then used by the lexer.finished_function() function when it displays the information about the function to the console.</p>
+    
+<hr>
+
+<p style="font-size: 10px;"> - RETURN</p>
+<h4 id="details-returns"></h4>
+<p>the state variable is an object that contains properties that store information about a specific function. One of these properties is returns.</p>
+    <p>The returns property of the state object is used to store the return value of the function being processed. This property is updated by the lexer.states[j].callback(matches, line) function, which is called when a match is found for the corresponding regular expression defined in the lexer.addStateRule(ignore, regex, callback) function.
+    </p>
+    <p>When the lexer.lex(lines) function is called, it processes the input and calls the appropriate callback function for each match found. The callback function is responsible for updating the properties of the state object with the information extracted from the input. In this case, the callback function updates the returns property with the return value of the function.</p>
+    <p>The returns property is then used by the lexer.finished_function() function when it displays the information about the function to the console.</p>
+    
+    
+<hr>
+
+<p style="font-size: 10px;"> - METHOD</p>
+<h4 id="details-method"></h4>
+<p>stores the REST method of the function (post or get).
+    </p>
+    <p>The method property of the state object is used to store the REST method of the function being processed. The REST method can be either "post" or "get". This property is updated by the lexer.states[j].callback(matches, line) function, which is called when a match is found for the corresponding regular expression defined in the lexer.addStateRule(ignore, regex, callback) function.</p>
+    <!-- <p>The returns property is then used by the lexer.finished_function() function when it displays the information about the function to the console.</p> -->
+    
+    
+<p style="font-size: 10px;"> - REST</p>
+<h4 id="details-rest"></h4>
+<p>Stores the REST URL of the function
+    </p>
+    <p> The rest property of the state object is used to store the REST URL of the function being processed. This property is updated by the lexer.states[j].callback(matches, line) function, which is called when a match is found for the corresponding regular expression defined in the lexer.addStateRule(ignore, regex, callback) function.</p>
+    <!-- <p>The returns property is then used by the lexer.finished_function() function when it displays the information about the function to the console.</p> -->
+    
+    
+<p style="font-size: 10px;"> - DESCTIPTION</p>
+<p id="details-description"></p>
+<!-- <p>Stores the REST URL of the function
+    </p>
+    <p> The rest property of the state object is used to store the REST URL of the function being processed. This property is updated by the lexer.states[j].callback(matches, line) function, which is called when a match is found for the corresponding regular expression defined in the lexer.addStateRule(ignore, regex, callback) function.</p> -->
+    <!-- <p>The returns property is then used by the lexer.finished_function() function when it displays the information about the function to the console.</p> -->
+    
+    
+<!-- <ul class="pro-ul">
+    <li>
+        <p>Process LESS files with <code>theming variables</code></p>
+    </li>
+    <li>
+        <p>Add vendor prefixes for <code>supported browsers</code> with <code>autoprefixer</code></p>
+    </li>
+    <li>
+        <p>Watch file changes and rebuild the necessary files when adjusting themes</p>
+    </li>
+    <li>
+        <p>Automatically process asset paths, so that minified and concatenated releases can exist in different directories</p>
+    </li>
+    <li>
+        <p>Allow custom builds with only the required components for your site</p>
+    </li>
+    <li>
+        <p>Allow advanced usage like Right-To-Left (RTL) languages using <code>RTLCSS</code></p>
+    </li>
+</ul> -->
