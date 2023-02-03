@@ -1,34 +1,27 @@
 const express = require('express');
+const jsonminify = require("jsonminify");
 const cors = require('cors');
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:5500', 'http://127.0.0.1:5500'],
-}));
-
-app.get('/data', (req, res) => {
-  const data = [{
-    namespace: 'John Doe',
-    function: 'johndoe@example.com',
-    function_params: '555-555-5555',
-    description: 'dfsd',
-    params: 'oeee',
-    returns: 'sdfs',
-    rest: 'seffgsdf',
-    method: '30'
-  },
-  {
-    namespace: 'Masatu',
-    function: 'johndoe@example.com',
-    function_params: '555-555-5555',
-    description: 'dfsd',
-    params: 'oeee',
-    returns: 'sdfs',
-    rest: 'seffgsdf',
-    method: 'asew30'
-  }];
-res.json(data);
-});
+    origin: ['http://localhost:5500', 'http://127.0.0.1:5500'],
+  }));
+  
+  app.get('/data', (req, res) => {
+      const fs = require("fs");
+  
+      fs.readFile("test.txt", "utf-8", (err, jsonData) => {
+          if (err) {
+              console.error(err);
+              return;
+          }
+          // Minify the jsonData and remove whitespaces
+          const minifiedData = jsonminify(jsonData).replace(/\s/g,'');
+          // parse the minified data
+          const data = JSON.parse(minifiedData);
+          res.json(data);
+      });
+  });
 
 const port = 3000;
 const hostname = 'localhost';

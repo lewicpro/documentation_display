@@ -1,20 +1,7 @@
 const { count } = require("console");
 const fs = require("fs");
-const http = require('http');
 
-const hostname = '127.0.0.1';
-const port = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  const sum = 34 + 4
-  res.end('Hello World :'+ sum);
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
 
 
 var state = {
@@ -22,10 +9,10 @@ var state = {
     function: "",
     function_params: "",
     description: "",
-    params: [],
-    returns: "",
-    rest: "",
-    method: "",
+    params:[],
+    returns:"",
+    rest:"",
+    method:"",
 }; 
 
 
@@ -48,10 +35,10 @@ var lexer = {
     },
 
     reset: function () {
-        state.namespace = "";
-        state.function = "";
-        state.function_params = "";
-        state.description = "";
+        state.namespace= "";
+        state.function="";
+        state.function_params="";
+        state.description="";
         state.params = [];
         state.returns = "";
         state.rest = "";
@@ -79,27 +66,8 @@ var lexer = {
         // console.log("REST Method: " + state.method);
         // console.log("REST URL: " + state.rest);
         // console.log("=============================================================================================================================")
-        // fs.writeFile("test.txt", JSON.stringify(
-        //     {
-        //             "Namespace " : state.namespace,
-        //             "Function " : state.namespace + "." + state.function + "(" + state.function_params + ")" ,
-        //             "Function Params ": state.function_params,
-        //             "Parameter ": state.params,
-        //             "Returns ": state.returns,
-        //             "Description ": state.function,
-        //             "REST Method ": state.method,
-        //             "REST URL ": state.rest
-        //         }), function(err) {
-        //     if(err) {
-        //         return console.log(err);
-        //     }
-        //     console.log("The file was saved!");
-        // }); 
-        
-        // Or
+
        
-          
-         
         fs.appendFileSync('test.txt',JSON.stringify({
             "Namespace " : state.namespace,
             "Function " : state.namespace + "." + state.function + "(" + state.function_params + ")" ,
